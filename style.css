@@ -76,6 +76,12 @@ a:focus, a:hover {
   list-style-type: lower-roman;
 }
 
+figcaption {
+  font: italic 15px 'Roboto', sans-serif;
+  margin: auto;
+  color: #ffffff;
+}
+
 /*
 /* images */
 .images {
@@ -97,12 +103,6 @@ a:focus, a:hover {
   border-radius: 10%;
   -webkit-box-pack: center!;
   -ms-flex-pack: center!;
-}
-
-figcaption {
-  font: italic 15px 'Roboto', sans-serif;
-  margin: 0 0 10px 0;
-  color: #ffffff;
 }
 
 /* image backgrounds
