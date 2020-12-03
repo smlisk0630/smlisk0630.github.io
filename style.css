@@ -35,6 +35,14 @@ code {
   color: black;
 }
 
+.post-title {
+  color: #ffffff;
+}
+
+.post-subtitle {
+  color: black;
+}
+
 /* article */
 article {
   color: #ffffff;
