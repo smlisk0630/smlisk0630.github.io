@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Samantha Lisk</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <header>
+
+        <section class="jumbotron jumbotron-fluid pb-3">
+          <section class="container">
+            <h1 class="display-4">Samantha Lisk, M.S.</h1>
+          </section>
+        </section>
+      
+        <nav class="navbar navbar-expand-lg navbar-light navbar-custom justify-content-center">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <section class="collapse navbar-collapse justify-content-center ml-auto text-center" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link text-white" href="https://smlisk0630.github.io">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="https://smlisk0630.github.io/portfolio">Work</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="https://github.com/smlisk0630" target="_blank">Github</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="https://trailblazer.me/id/slisk" target="_blank">Trailhead</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="https://smlisk0630.github.io/contact">Contact</a>
+              </li>
+            </ul>
+          </section>
+        </nav>
+      
+      </header>
+
+      <section class="jumbotron jumbotron-fluid pb-3">
+        <section class="container-custom p-3">
+          <h2 class="display-5">
+            From Process to Flow: Part 2
+          </h2>
+        </section>
+      </section>
+
+      <section class="container mt-4 mx-auto">
+        <article>
+            <p>
+                In <a href="https://smlisk0630.github.io/portfolio/from-process-to-flow-part-1">Part 1</a>, we established the benefits of transitioning our case management process from Process Builder to Flow. But what exactly does that mean? How do we do it?
+            </p>
+            <p>
+                The first step is to outline our project. Let’s break it down into what we’ll create, packages to be installed, and expected results. Then we’ll get to work building our solution!
+            </p>
+            <h3>What You Will Create</h3>
+            <ul>
+                <li>
+                    New Global Action with a Source of Lightning Component
+                </li>
+                <li>
+                    New Custom Label to hold the ID of your org’s Internal Employee Record Type for Cases
+                </li>
+                <li>
+                    New Screen Flow
+                </li>
+                <li>
+                    New Lightning Aura Component, Controller, and Style (Note: I will provide the code for these files)
+                </li>
+            </ul>
+            <figure>
+                <img class="images-flow" name="New Case Flow Component" src="/assets/Images/New Case Flow Component.png" alt="Screenshot of new case flow component" />
+            </figure>
+            <h3>Packages to Install</h3>
+            <ul>
+                <li>
+                    <a href="https://unofficialsf.com/introducing-flow-basepacks/" target="_blank">Flow Basepacks</a> from <a href="https://unofficialsf.com" target="_blank">UnofficialSF.com</a> (Note: you will need to install both FlowActionsBasePack and FlowScreenComponentsBasePack)
+                </li>
+            </ul>
+            <h3>Expected Results</h3>
+            <ul>
+                <li>
+                    Users will use the New Case Global Action to submit Cases to the Administrator.
+                </li>
+                <li>
+                    The New Case Global Action will have the Lightning Component Type and the new Flow as the Content Source.
+                </li>
+                <li>
+                    The new Lightning Aura Component files will apply to the new Flow and ensure that the Flow will follow established <a href="https://www.lightningdesignsystem.com/" target="_blank">Lightning Design System principles</a>.
+                </li>
+            </ul>
+            <h3>Preliminary Steps</h3>
+            <figure>
+                <img class="images-flow" name="Sandcastle" alt="sandcastle" src="/assets/Images/sandcastle.jpg" />
+            </figure>
+            <figcaption><a href="https://unsplash.com/photos/TNKn6hUwCLY?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink">Photo</a> by Aaron on Unsplash</figcaption>
+
+            <aside>Note: Ensure that you are installing, building, and testing in a sandbox first.</aside>
+            <ol>
+                <li>
+                    Back up your org’s data AND metadata. Note that the native scheduled backups only back up data, NOT metadata. There are solutions that can do both, such as <a href="https://gearset.com/" target="_blank">Gearset</a>, which also includes DevOps functionality.
+                </li>
+                <li>
+                    If you haven’t already, create a Case support process and Case assignment rules.
+                </li>
+                <li>
+                    Set your org’s email deliverability to “System email only.”
+                </li>
+                <li>
+                    Deactivate your Process Builder currently sending Email Alerts to the Admin for new Cases.
+                </li>
+                <li>
+                    Remove the current New Case Global Action from the Mobile/Lightning Actions on the Publisher Layout.
+                </li>
+                <li>
+                    Create a new Custom Label. The value will be the ID for the Internal Employee Record Type on the Case object. We will call, or pull, the Custom Label into the Flow, which will enable us to avoid hard-coding an ID. For more info, Jen Lee has a <a href="https://jenwlee.com/2017/03/28/did-i-just-see-you-hardcode-a-salesforce-id-aw-hell-no/" target="_blank">great post</a> on avoiding hard-coding IDs as a best practice for Admins.
+                </li>
+            </ol>
+            <h3>Install FlowBasePacks</h3>
+            <p>
+                FlowBasepacks will allow us to use Quick Choice, a Flow screen component that enables us to set the visibility of fields on the screen based on the value of a picklist. In our case, we will use it to make the Account and Opportunity lookups visible—or not—based on the value of the Case Type field.
+            </p>
+            <ol>
+                <li>
+                    Install FlowActionsBasePack.
+                </li>
+                    <ol class="lower-alpha">
+                        <li>
+                            Use the install links <a href="https://unofficialsf.com/flow-action-and-screen-component-basepacks/" target="_blank">here</a>.
+                        </li>
+                        <li>
+                            Log into your org. Note: if you have a custom domain, you will need to choose that option on the login page, then enter the domain URL.
+                        </li>
+                        <li>
+                            Install for Admins Only.
+                        </li>
+                    </ol>
+                <li>
+                    Once FlowActionsBasePack has installed, repeat the above steps for FlowScreenComponentsBasePack.
+                </li>  
+            </ol>
+            <h3>Build the Flow</h3>
+            <p>
+                If you don’t have much experience with Flows, the good news is that this one is relatively simple. That being said, I recommend reading <a href="https://www.arkusinc.com/archive/2020/first-time-flownatic-tips" target="_blank">this article</a> by Melinda Smith at Arkus as an introduction to or review of the concepts of resources and variables, which are crucial to any Flow.
+            </p>
+            <figure>
+                <img class="images-flow" name="Finished Flow" src="/assets/Images/Finished_Flow.png" alt="Screenshot of finished Flow" />
+            </figure>
+            <h3>Create Collection Variables</h3>
+            <p>You can think of variables as storage boxes or containers. When users input information (data values) into our Case, the values will be stored in the variables. Later, the Flow will be able to find the data again by going to the variables, pulling the data out, and displaying it in an Email Alert and the final screen of the Flow.</p>
+            <p>The first variables we will create for this Flow are Collection Variables. Collection Variables can store numerous values. This is in contrast to Record (Single) Variables, which can only store one value.</p>
+            <ol>
+                <li>
+                    On the Flows screen in Setup, click the “New Flow” button.
+                </li>
+                <li>
+                    Choose Screen Flow, then Freeform.
+                </li>
+                <li>
+                    In the Toolbox on the left, click “Manager.”
+                </li>
+                <li>
+                    Create 2 Collection Variables: varFileNames and varContentDocIDs. For both variables:
+                </li>
+                <ol class="lower-alpha">
+                    <li>
+                        Click “New Resource” and choose “Variable” for the Resource Type.
+                    </li>
+                    <li>
+                        Enter the API Name and Description. Start off your Flow career right by establishing a naming convention for your variables. I recommend “var” + “[DescriptiveNameOfVariablePurpose],” e.g. varFileNames. In addition, don’t leave out a Description; treat it as documentation!
+                    </li>
+                    <li>
+                        Leave Default Value blank and choose “Text” for the Data Type.
+                    </li>
+                    <li>
+                        Check the box labelled “Allow multiple values (collection).” The latter is what tells the system that these variables should be Collection Variables instead of Record (Single) Variables.
+                    </li>
+                    <li>
+                        Click both boxes making the variables available for input and output, then click “Done.”
+                    </li>
+                </ol>
+                <li>
+                    Click the “Save” button and enter a Name and Description for your Flow. Save often!
+                </li>
+            </ol>
+            <h3>Create a Formula</h3>
+            <p>
+                Once both Collection Variables have been created, we’ll then create a formula resource that will call our Custom Label. This way, we will avoid hard-coding an ID in the Flow, since Custom Labels are much easier to change.
+            </p>
+            <ol>
+                <li>
+                    Click “New Resource” and choose “Formula.”
+                </li>
+                <li>
+                    Enter an API Name and Description. Follow the same naming convention you set for variables. In this case, it would be something like “formCaseRecTypeId.”
+                </li>
+                <li>
+                    Select “Text” as the Data Type.
+                </li>
+                <li>
+                    In the Formula box, click inside the box with the “insert a resource” text.
+                </li>
+                <ol class="lower-alpha">
+                    <li>
+                        Type “label” and click the Label option that pops up in the Global Variables menu.
+                    </li>
+                    <li>
+                        Type the name of the Custom Label you created and choose it when it appears in the menu.
+                    </li>
+                    <li>
+                        Click “Done.”
+                    </li>
+                </ol>
+                <li>
+                    Click "Save."
+                </li>
+            </ol>
+            <figure>
+                <img class="images-flow" src="/assets/Images/formCaseRecTypeId.png" alt="formCaseRecTypeId formula resource" name="formula resource" />
+            </figure>
+            <h3>Create Record Variables</h3>
+            <p>
+                Now it’s time to create Record (Single) Variables to store the data entered by users and the API Name of the Record Type, which will ensure that the Case will have the correct Record Type.
+            </p>
+            <h4>Case Data Variable</h4>
+            <p>
+                First we’ll create the variable to store our user’s data. 
+            </p>
+            <ol>
+                <li>
+                    Click “New Resource” and choose “Variable” for the Resource Type.
+                </li>
+                <li>
+                    Enter the API Name and Description, e.g. “varCaseData.”
+                </li>
+                <li>
+                    Leave Default Value blank and choose “Record” for the Data Type.
+                </li>
+                <li>
+                    Choose “Case” for the Object.
+                </li>
+                <li>
+                    Click both boxes making the variables available for input and output, then click “Done.”
+                </li>
+                <li>
+                    Click "Save."
+                </li>
+            </ol>
+            <figure>
+                <img class="images-flow" name="Dog in Box Variable Illustration" alt="dog in box variable illustration" src="/assets/Images/varDogHouse.jpg" />
+            </figure>
+            <figcaption>Value "Dog" stored in varDogHouse<a href="https://unsplash.com/photos/sxNt9g77PE0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"><br>Photo</a> by Erda Estremera on Unsplash</figcaption>
+            <h4>Record Type Variable</h4>
+            <p>
+                The first few steps to create this variable are the same as for the case data variable. Once you choose the object in Step 4, however, you’ll make different choices.
+            </p>
+            <ol>
+                <li>
+                    Click “New Resource” and choose “Variable” for the Resource Type.
+                </li>
+                <li>
+                    Enter the API Name and Description.
+                </li>
+                <li>
+                    Leave Default Value blank and choose “Record” for the Data Type.
+                </li>
+                <li>
+                    Choose “Record Type” for the Object. (Yep, Record Type is an object!)
+                </li>
+                <li>
+                    Click the “Available for output” box, then click “Done.”
+                </li>
+                <li>
+                    Click "Save."
+                </li>
+            </ol>
+        </article>
+    </section>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</body>
+
+    <footer>
+
+        <section class="jumbotron jumbotron-fluid pb-5">
+            <section class="container">
+            &copy; Samantha Lisk 2020
+            </section>
+        </section>
+
+    </footer>
+
+</html>  
