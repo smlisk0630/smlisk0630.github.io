@@ -18,7 +18,7 @@ header {
 
 /* nav menu */
 .nav-item {
-  font-size: 20px;
+  font-size: 22px;
 }
 
 .navbar-custom {
@@ -28,7 +28,8 @@ header {
 /* body */
 body {
   background: #009EDB;
-  font-family: 'Roboto', sans-serif;
+  font: 1.25rem 'Roboto', sans-serif;
+  line-height: 1.5;
 }
 
 code {
@@ -89,7 +90,6 @@ figcaption {
   color: #ffffff;
 }
 
-/*
 /* images */
 .images {
   display:flex;
@@ -111,34 +111,3 @@ figcaption {
   -webkit-box-pack: center!;
   -ms-flex-pack: center!;
 }
-
-/* image backgrounds
-.img-background-1 {
-  display:flex;
-  justify-content:center;
-  background-color: #ffffff;
-  width: 1562.5%;
-  height: 1250%;
-  border-radius: 50%;
-  margin: 0 40px;
-}
-
-.img-background-2 {
-  display:flex;
-  justify-content:center;
-  background-color: #ffffff;
-  width: 1562.5%;
-  height: 1250%;
-  border-radius: 50%;
-  margin: 0 40px;
-}
-
-.img-background-3 {
-  display:flex;
-  justify-content:center;
-  background-color: #ffffff;
-  width: 1562.5%;
-  height: 1250%;
-  border-radius: 50%;
-  margin: 0 40px;
-} */
