@@ -124,6 +124,7 @@
                     Explaining all of the code we’ll be using here is outside the scope of this article. If you’re interested, there are many resources available where you can learn about it, including Trailhead, Apex Hours, David Liu’s Apex Academy, and developer documentation. Otherwise, you can just simply copy/paste the code below into the Component to replace the default code. The code you're copy/pasting calls the Flow in the Global Action. Then save, but don’t quit yet.
                 </p>
                 <p class="code">
+                    <code>
                     &lt;aura:component implements="force:lightningQuickActionWithoutHeader,flexipage:availableForAllPageTypes,
                     
                     flexipage:availableForRecordHome,force:hasRecordId" access="global"&gt;
@@ -147,6 +148,7 @@
                         &lt;/div&gt;
                         <br>
                     &lt;/aura:component&gt;
+                    </code>
                 </p>
                 <h3>Controller</h3>
                     <p>
@@ -159,6 +161,7 @@
                         Below is the JavaScript you’ll copy/paste into your Controller file to replace the default code there. Note: in the line “flow.startFlow(“New_Case”);" you’ll replace “New Case” with the API Name of your Flow. Be sure to save after copy/pasting.
                     </p>
                     <p class="code">
+                        <code>
                         ({
                             init : function(component) {
                                 <br>
@@ -172,6 +175,7 @@
                             }
                             <br>
                         })
+                        </code>
                     </p>
                 <h3>Style</h3>
                     <p>
@@ -181,6 +185,7 @@
                         First, open the “STYLE” file from the list on the right. Next, copy/paste the below code to replace the default code, then save. This code adds a scrollbar to our component and sets its width.
                     </p>
                     <p class="code">
+                        <code>
                         .THIS .slds-scrollable {
                             <br>
                             overflow: auto !important;
@@ -194,6 +199,7 @@
                             max-width: auto;
                             <br>
                         }                                
+                        </code>
                     </p>
                     <p>
                         And that’s all the code we’ll need! Hang in there, we’re almost done!

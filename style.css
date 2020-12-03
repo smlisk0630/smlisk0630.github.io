@@ -31,6 +31,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+code {
+  color: black;
+}
+
 /* article */
 article {
   color: #ffffff;
