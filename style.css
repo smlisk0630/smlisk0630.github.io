@@ -85,6 +85,7 @@ a:focus, a:hover {
   list-style-type: lower-roman;
 }
 
+/* figcaption */
 figcaption {
   font: italic 15px 'Roboto', sans-serif;
   color: #ffffff;
