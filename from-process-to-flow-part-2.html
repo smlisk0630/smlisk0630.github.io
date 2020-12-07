@@ -81,16 +81,16 @@
             <h3>What You Will Create</h3>
             <ul>
                 <li>
-                    New Global Action with a Source of Lightning Component
+                    New <a href="https://help.salesforce.com/articleView?id=actions_overview_global.htm&type=5" target="_blank">Global Action</a> with a Source of Lightning Component
                 </li>
                 <li>
-                    New Custom Label to hold the ID of your org’s Internal Employee Record Type for Cases
+                    New <a href="https://help.salesforce.com/articleView?id=cl_about.htm&type=5" target="_blank">Custom Label</a> to hold the ID of your org’s Internal Employee Record Type for Cases
                 </li>
                 <li>
                     New Screen Flow
                 </li>
                 <li>
-                    New Lightning Aura Component, Controller, and Style (Note: I will provide the code for these files)
+                    New Lightning Aura Component, Controller, and Style (Note: I will provide the code for these files, but Trailhead has a good introduction to Aura Components <a href="https://trailhead.salesforce.com/en/content/learn/modules/lex_dev_lc_basics/lex_dev_lc_basics_prereqs" target="_blank">here</a>.)
                 </li>
             </ul>
             <figure>
@@ -138,13 +138,16 @@
                     Remove the current New Case Global Action from the Mobile/Lightning Actions on the Publisher Layout.
                 </li>
                 <li>
-                    Create a new Custom Label. The value will be the ID for the Internal Employee Record Type on the Case object. We will call, or pull, the Custom Label into the Flow, which will enable us to avoid hard-coding an ID. For more info, Jen Lee has a <a href="https://jenwlee.com/2017/03/28/did-i-just-see-you-hardcode-a-salesforce-id-aw-hell-no/" target="_blank">great post</a> on avoiding hard-coding IDs as a best practice for Admins.
+                    Create a new Custom Label. The value will be the ID for the Internal Employee Record Type on the Case object. We will call, or pull, the Custom Label into the Flow, which will enable us to avoid hard-coding an ID. For more info, Jen Lee has a <a href="https://jenwlee.com/2017/03/28/did-i-just-see-you-hardcode-a-salesforce-id-aw-hell-no/" target="_blank">great post</a> on avoiding the hard-coding of IDs as a best practice for Admins.
                 </li>
             </ol>
             <h3>Install FlowBasePacks</h3>
             <p>
                 FlowBasepacks will allow us to use Quick Choice, a Flow screen component that enables us to set the visibility of fields on the screen based on the value of a picklist. In our case, we will use it to make the Account and Opportunity lookups visible—or not—based on the value of the Case Type field.
             </p>
+            <figure>
+                <img class="images-flow" name="Quick Choice Screen Component" alt="quick choice screen component" src="/assets/Images/Type_Quick_Choice.png" />
+            </figure>
             <ol>
                 <li>
                     Install FlowActionsBasePack.
@@ -173,6 +176,10 @@
             </figure>
             <h3>Create Collection Variables</h3>
             <p>You can think of variables as storage boxes or containers. When users input information (data values) into our Case, the values will be stored in the variables. Later, the Flow will be able to find the data again by going to the variables, pulling the data out, and displaying it in an Email Alert and the final screen of the Flow.</p>
+            <figure>
+                <img class="images-flow" name="Dog in Box Variable Illustration" alt="dog in box variable illustration" src="/assets/Images/varDogHouse.jpg" />
+            </figure>
+            <figcaption class="text-center mb-3">Value "Dog" stored in varDogHouse<a href="https://unsplash.com/photos/sxNt9g77PE0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"><br>Photo</a> by Erda Estremera on Unsplash</figcaption>
             <p>The first variables we will create for this Flow are Collection Variables. Collection Variables can store numerous values. This is in contrast to Record (Single) Variables, which can only store one value.</p>
             <ol>
                 <li>
@@ -187,6 +194,9 @@
                 <li>
                     Create 2 Collection Variables: varFileNames and varContentDocIDs. For both variables:
                 </li>
+                <figure>
+                    <img class="images-flow" name="Collection Variables in Flow Manager" alt="collection variables in flow manager" src="/assets/Images/flow_manager_collection_vars.png" />
+                </figure>
                 <ol class="lower-alpha">
                     <li>
                         Click “New Resource” and choose “Variable” for the Resource Type.
@@ -208,13 +218,17 @@
                     Click the “Save” button and enter a Name and Description for your Flow. Save often!
                 </li>
             </ol>
+            <figure>
+                <img class="images-flow" name="File Names Variable" alt="File names variable" src="/assets/Images/varFileNames.png" />
+            </figure>
             <h3>Create a Formula</h3>
             <p>
                 Once both Collection Variables have been created, we’ll then create a formula resource that will call our Custom Label. This way, we will avoid hard-coding an ID in the Flow, since Custom Labels are much easier to change.
             </p>
+            <p>To create the resource:</p>
             <ol>
                 <li>
-                    Click “New Resource” and choose “Formula.”
+                    In the Flow Manager, click “New Resource” and choose “Formula.”
                 </li>
                 <li>
                     Enter an API Name and Description. Follow the same naming convention you set for variables. In this case, it would be something like “formCaseRecTypeId.”
@@ -240,6 +254,9 @@
                     Click "Save."
                 </li>
             </ol>
+            <p>
+                Here's what your formula resource will look like:
+            </p>
             <figure>
                 <img class="images-flow" src="/assets/Images/formCaseRecTypeId.png" alt="formCaseRecTypeId formula resource" name="formula resource" />
             </figure>
@@ -272,9 +289,8 @@
                 </li>
             </ol>
             <figure>
-                <img class="images-flow" name="Dog in Box Variable Illustration" alt="dog in box variable illustration" src="/assets/Images/varDogHouse.jpg" />
+                <img class="images-flow" name="Case Data Variable" alt="Case data variable" src="/assets/Images/varCaseData.png" />
             </figure>
-            <figcaption class="text-center mb-3">Value "Dog" stored in varDogHouse<a href="https://unsplash.com/photos/sxNt9g77PE0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink"><br>Photo</a> by Erda Estremera on Unsplash</figcaption>
             <h4>Record Type Variable</h4>
             <p>
                 The first few steps to create this variable are the same as for the case data variable. Once you choose the object in Step 4, however, you’ll make different choices.
@@ -299,6 +315,9 @@
                     Click "Save."
                 </li>
             </ol>
+            <figure>
+                <img class="images-flow" name="Record Type Variable" alt="Record type variable" src="/assets/Images/Record Type Variable.png" />
+            </figure>
         </article>
     </section>
 
