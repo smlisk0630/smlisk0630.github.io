@@ -49,9 +49,13 @@ article {
   color: #ffffff;
 }
 
-.article-list>ul, .project-list>ul {
+.article-list>ul {
   color: #ffffff;
   list-style-type: none;
+}
+
+.card-title {
+  text-align: center;
 }
 
 /* anchor styling */
