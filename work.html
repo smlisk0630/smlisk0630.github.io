@@ -71,88 +71,57 @@
 
   </header>
 
-  <!-- Heading with article title -->
+  <!-- Heading with page title -->
   <section class="jumbotron jumbotron-fluid pb-3">
     <section class="container-custom p-3">
       <h2 class="display-5">
-        From Process to Flow: Part 7
+        Articles and Presentations
       </h2>
     </section>
   </section>
 
-  <!-- Article content -->
-  <section class="container mt-4 mx-auto">
-    <article>
-      <p>
-        Here we are: the last task necessary to get your Flow ready for Prime Time! It’s time to create your new Global
-        Action.
-      </p>
-      <h3>Create a Global Action</h3>
-      <figure>
-        <img class="images-flow" name="New Case Global Action" alt="new case global action"
-          src="/assets/Images/New Case Global Action.png" />
-      </figure>
-      <ol>
-        <li>
-          Go to Setup and search for “global.” Click “Global Actions.”
-        </li>
-        <li>
-          Click the "New Action" button.
-        </li>
-        <li>
-          For Action Type, choose "Lightning Component."
-        </li>
-        <li>
-          For “Lightning Component,” find the name of the Component you just created.
-        </li>
-        <li>
-          For height, enter "50px."
-        </li>
-        <li>
-          Do <strong>not</strong> choose a Standard Label Type.
-        </li>
-        <li>
-          For Label, enter the name you want users to see to access the Action, e.g. “New Case.”
-        </li>
-        <li>
-          When a Label is entered, the Name field should auto-populate with an API name. Make a note of this.
-        </li>
-        <li>
-          Enter a Description, then click "Save." Your Action should look like mine in the screenshot above.
-        </li>
-      </ol>
-      <h3>Add the Action to the Publisher Layout</h3>
-      <ol>
-        <li>
-          Once again, go to Setup and search for “global,” but this time click “Publisher Layouts.”
-        </li>
-        <li>
-          Click “Edit” beside your layout.
-        </li>
-        <li>
-          If you have not already removed the other New Case global action from the “Salesforce Mobile and Lightning
-          Experience Actions” layout, remove it now.
-        </li>
-        <li>
-          At the top, click “Mobile & Lightning Actions.”
-        </li>
-        <li>
-          Find the Action you created. If it has the same Label as another action, hover over the Actions and find the
-          correct one via the API Name.
-        </li>
-        <li>
-          Drag the Action into the “Salesforce Mobile and Lightning Experience Actions” layout and click “Save.”
-        </li>
-      </ol>
-      <p>
-        And that’s it. You and your users should now be able to use your new Flow in a Global Action to submit a Case.
-        Be sure to test it by creating Cases!
-      </p>
-      <figure>
-        <img class="images-flow" name="Sample Case Record" alt="sample case record"
-          src="/assets/Images/Sample Case.png" />
-      </figure>
-    </article>
+  <!-- Cards for nav items -->
+  <section class="container-fluid mt-4 mx-auto">
+    <section class="row justify-content-center">
+      <section class="col-auto mb-3 h-75">
+        <section class="card" style="width: 18rem;">
+          <img src="assets/Images/New Case Process.png" class="card-img-top img-fluid" alt="New Case Process Builder">
+          <section class="card-body">
+            <h5 class="card-title">From Ad Hoc to Automation</h5>
+            <p class="card-text">If you're a #Salesforce solo admin like me, you need an internal ticketing/support
+              system to manage requests and bug reports. But how do you set one up without Service Cloud?</p>
+            <p class="card-text">Enter Cases.</p>
+            <a href="https://www.linkedin.com/pulse/from-ad-hoc-automation-salesforce-case-management-solo-lisk-m-s-/"
+              target="_blank" class="col text center btn btn-primary">Build the Process</a>
+          </section>
+        </section>
+      </section>
+      <section class="col-auto mb-3 h-75">
+        <section class="card h-100" style="width: 18rem;">
+          <img src="assets/Images/Finished_Flow.png" class="card-img-top img-fluid" alt="Finished Flow">
+          <section class="card-body">
+            <h5 class="card-title">From Process to Flow Series</h5>
+            <p class="card-text">This series describes how to transition your Case process from Process Builder to Flow
+              and even throws in a little code on the side.</p>
+            <a href="https://smlisk0630.github.io/from-process-to-flow-series"
+              class="col text center btn btn-primary">Go with the Flow</a>
+          </section>
+        </section>
+      </section>
+      <section class="col-auto mb-3 h-75">
+        <section class="card h-100" style="width: 18rem;">
+          <img src="assets/Images/time-for-change.jpg" class="card-img-top img-fluid" alt="Time for Change Screen">
+          <section class="card-body">
+            <h5 class="card-title">3 Principles of Change Management for the Accidental Admin</h5>
+            <p class="card-text">Is your inbox clogged with user requests? Do your users know when to expect your next
+              update? Do you know the purpose of all those custom fields your previous admin created? Each of these
+              represents an important facet of your change management policy as an admin.</p>
+            <a href="https://vevents0.wpengine.com/lessons/3-principles-of-change-management-for-the-accidental-admin-samantha-lisk-salesforce-certified-administrator-the-fedcap-group/"
+              target="_blank" class="col text center btn btn-primary">Manage Change</a>
+          </section>
+        </section>
+      </section>
+    </section>
   </section>
 
   <!-- JQuery for Bootstrap -->

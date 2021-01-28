@@ -49,7 +49,7 @@ article {
   color: #ffffff;
 }
 
-.article-list>ul {
+.article-list>ul, .project-list>ul {
   color: #ffffff;
   list-style-type: none;
 }
